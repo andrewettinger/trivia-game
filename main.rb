@@ -12,7 +12,18 @@ end
 
 post '/question' do
 	@search = Imdb::Search.new(params[:search])
+	@filtered_movies = movie_filter(@search.movies[0..20])
 	erb(:question)
+end
+
+def movie_filter(movies)
+	good_movies = []
+	movies.each do |movie|
+		if !movie.poster.nil? 
+		good_movies.push(movie)
+		end
+	end
+return good_movies[0..8]
 end
 
 

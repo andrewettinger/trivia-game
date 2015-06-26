@@ -1,12 +1,9 @@
-<% counter = 0 %>
+<h1> Which movie is the highest rated? </h1>
 
-<% @search.movies.each do |movies| %>
-	<% counter += 1 %>
-	<% if counter < 10 %>
+<!-- <body background="https://c3.staticflickr.com/3/2486/3953179152_5d94a24c62_b.jpg" </body> -->
+
+<% @filtered_movies.each do |movies| %>
 		<img src="<%= movies.poster %>" alt="Poster" style="width:300px;height:400px;">
 
 		<button type="submit" name="choose" value="<%=movies.poster %>"> <- Select </button>
-
-	<% end %>
 <% end %>
-
