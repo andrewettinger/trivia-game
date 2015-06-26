@@ -4,7 +4,9 @@
 	<% counter += 1 %>
 	<% if counter < 10 %>
 		<img src="<%= movies.poster %>" alt="Poster" style="width:300px;height:400px;">
-	<% else %>
-		<% break %>
+
+		<button type="submit" name="choose" value="<%=movies.poster %>"> <- Select </button>
+
 	<% end %>
 <% end %>
+
