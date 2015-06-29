@@ -18,17 +18,23 @@ post '/question' do
 	@filtered_movies = filter.movie_filter(@search.movies[0..20])
 	@rando_movie = @filtered_movies.sample
 	@year = @rando_movie.year 
+	session[:selection] = @rando_movie.id
 
 	erb(:question)
 end
 
 post'/check' do
-
-	erb(:check)
+	if session[:selection] == params[:selection]
+		redirect to ('/win')
+	else 
+		redirect to ('/lose')
+	end
 end
 
-#post 9 movies + question
+get '/win' do
+	erb(:win)
+end
 
-#post checks answer
-
-#get shows result for answer 
+get '/lose' do
+	erb(:lose)
+end

@@ -1,0 +1,22 @@
+Change filter class to a quizz class that's gonna handle the whole game
+
+class Quiz
+	def initialize(term)
+	@term = term
+	@movies = []
+	end
+
+	def start_quiz
+		imdb search
+	end
+
+	def filter_movies
+	#already have
+	end
+
+	def year_quiz
+	#already have
+	end
+
+end
+
